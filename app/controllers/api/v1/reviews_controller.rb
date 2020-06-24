@@ -1,6 +1,8 @@
 module Api
     module V1
         class ReviewsController < ApplicationController
+            protect_from_forgery with: :null_session
+
             def create
                 review = Review.create(review_params)
 
@@ -24,7 +26,7 @@ module Api
             private
 
             def review_params
-                params.require(:reviews).permit(:title, :description, :score, :manga_id)
+                params.require(:review).permit(:title, :description, :score, :manga_id)
             end
         end
     end

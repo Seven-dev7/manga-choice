@@ -1,6 +1,8 @@
 module Api
     module V1
         class MangasController < ApplicationController
+            protect_from_forgery with: :null_session
+            
             def index
                 mangas = Manga.all
                 render json: MangaSerializer.new(mangas, options).serialized_json

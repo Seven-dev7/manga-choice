@@ -32,8 +32,6 @@ const Mangas = () => {
     const [mangas, setMangas] = useState([])
 
     useEffect(()=> {
-        // Get all of ou Mangas from api
-        // Update Mangas in our state
         axios.get('/api/v1/mangas.json')
         .then( resp => {
             setMangas(resp.data.data)

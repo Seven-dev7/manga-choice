@@ -6,13 +6,18 @@ import styled from 'styled-components';
 const Card = styled.div`
     border: 1px solid #efefef;
     background: #fff;
+    text-align: center;
 `
 const MangaLogo = styled.div`
-    width: 70px;
-
+    width: 100px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    
     img {
-        height: 50px;
-        width: 50px;
+        height: 100px;
+        width: 100px;
         border-radius: 100%;
         border: 1px solid #efefef;
     }

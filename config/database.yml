@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: ouss
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: manga-choice_development
+  
+test:
+  <<: *default
+  database: manga-choice_test
+
+production:
+  <<: *default
+  database: manga-choice_production
+  username: manga-choice
+  password: <%= ENV['MANGA-CHOICE_DATABASE_PASSWORD'] %>

@@ -1,24 +1,58 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+
+const Card = styled.div`
+    border: 1px solid #efefef;
+    background: #fff;
+`
+const MangaLogo = styled.div`
+    width: 70px;
+
+    img {
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        border: 1px solid #efefef;
+    }
+`
+const MangaName = styled.div`
+    padding: 20px 0 10px 0;
+`
+const LinkWrapper = styled.div`
+    margin: 30px 0 20px 0;
+    height: 50px;
+
+    a{
+        color: #fff;
+        background: #000;
+        border-radius: 4px;
+        padding: 10px 50px;
+        border: 1px solid #000;
+        width: 100%;
+        text-decoration: none;
+    }
+`
 
 const Manga = (props) => {
     return(
-        <div className="card">
-            <div className="manga-logo">
+        <Card>
+            <MangaLogo>
                 <img src={props.attributes.image_url} alt={props.attributes.name} />
-            </div>
-            <div className="manga-name">
+            </MangaLogo>
+            <MangaName>
                 {props.attributes.name}
-            </div>
+            </MangaName>
             <div className="manga-score">
                 {props.attributes.avg_score}
             </div>
-            <div className="manga-link">
+            <LinkWrapper>
                 <Link to={`/mangas/${props.attributes.slug}`}>
                     Voir Manga
                 </Link>
-            </div>
-        </div>
+            </LinkWrapper>
+        </Card>
     )
 }
 

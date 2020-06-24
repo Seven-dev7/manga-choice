@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const Manga = (props) => {
     return(
@@ -14,9 +14,9 @@ const Manga = (props) => {
                 {props.attributes.avg_score}
             </div>
             <div className="manga-link">
-                <a href={`/mangas/${props.attributes.slug}`}>
+                <Link to={`/mangas/${props.attributes.slug}`}>
                     Voir Manga
-                </a>
+                </Link>
             </div>
         </div>
     )

@@ -24,7 +24,7 @@ const Main = styled.div`
 
 const Manga = (props) => {
     const [manga, setManga] = useState({})
-    const [review, setRanga] = useState({})
+    const [review, setReview] = useState({})
     const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {

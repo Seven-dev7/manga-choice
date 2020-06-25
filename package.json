@@ -1,5 +1,4 @@
 {
-  "scripts": { "postinstall": "cd client && npm install" },
   "name": "manga-choice",
   "private": true,
   "dependencies": {
